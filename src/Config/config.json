@@ -44,7 +44,7 @@
 				"sections": true,
 				"content":{
 					"Education": {
-						"subsections": false,
+						"sections": false,
 						"content": {
 							"b-0": "Hobart College",
 							"p-0": "Graduated in 2019 with a dual BSc in Physics and Computer Science, as well as a minor in French.",
@@ -53,7 +53,7 @@
 						}
 					},
 					"Work Experience": {
-						"subsections": true,
+						"sections": true,
 						"content": {
 							"Terrafugia": {
 								"content": {
@@ -73,7 +73,7 @@
 						}
 					},
 					"NCAA": {
-						"subsections": false,
+						"sections": false,
 						"content": {
 							"b-0":"Hobart College Defensive End",
 							"p-0": "Recorded 57 tackles and 5 sacks as a Sophomore.",
@@ -84,41 +84,41 @@
 						}
 					},
 					"Skills": {
-					"subsections": true,
-					"Languages/Frameworks": {
-						"content": {
-							"h-0": "Used at an enterprise level",
-							"p-0": "C++",
-							"h-1": "Proficient within a personal or academic setting",
-							"p-2": "Java",
-							"p-3": "JUnit",
-							"p-4": "Swing",
-							"p-5": "C",
-							"p-6": "Javascript",
-							"p-7": "React",
-							"p-8": "Redux",
-							"p-9": "SQL",
-							"p-10": "Bash",
-							"h-2": "Familiar with",
-							"p-11": "Python",
-							"p-12": "PHP",
-							"p-13": "Applescript"
-						}
-					},
-					"Tools": {
-						"content": {
-							"h-0": "Used at an enterprise level",
-							"p-1": "Jenkins",
-							"p-2": "SVN",
-							"p-3": "Qt",
-							"p-4": "Linux",
-							"h-1": "Proficient within a personal or academic setting",
-							"p-4": "Eclipse",
-							"p-5": "git",
-							"p-6": "Sublime Text"
+						"sections": true,
+						"Languages/Frameworks": {
+							"content": {
+								"h-0": "Used at an enterprise level",
+								"p-0": "C++",
+								"h-1": "Proficient within a personal or academic setting",
+								"p-2": "Java",
+								"p-3": "JUnit",
+								"p-4": "Swing",
+								"p-5": "C",
+								"p-6": "Javascript",
+								"p-7": "React",
+								"p-8": "Redux",
+								"p-9": "SQL",
+								"p-10": "Bash",
+								"h-2": "Familiar with",
+								"p-11": "Python",
+								"p-12": "PHP",
+								"p-13": "Applescript"
+							}
+						},
+						"Tools": {
+							"content": {
+								"h-0": "Used at an enterprise level",
+								"p-1": "Jenkins",
+								"p-2": "SVN",
+								"p-3": "Qt",
+								"p-4": "Linux",
+								"h-1": "Proficient within a personal or academic setting",
+								"p-4": "Eclipse",
+								"p-5": "git",
+								"p-6": "Sublime Text"
+							}
 						}
 					}
-				}
 				}			
 			},
 			"PROJECTS": {

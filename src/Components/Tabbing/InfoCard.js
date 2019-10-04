@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import { getPanelTabs } from '../../Factory/tabHelp';
 import TabPanel from './TabPanel';
 import { getUnsectionedContent } from '../../Factory/infoHelp';
+import { getTabMenu, getTabPanels } from '../../Factory/TabFactory';
+import { TAB_STR } from '../../Constants';
 
 const windowStyle = (openTab) => createStyles({
 	root: {
@@ -43,46 +45,12 @@ const styles = () => createStyles({
 
 function InfoCard (props: any) {
 
-		const [value, setValue] = React.useState(0);
-		const {currentTab, tabs, classes} = props;
-		
-		const handleChange = (evt, val) => {
-			setValue(val);
-		}
+	const { tabs, currentTab } = props;
 
-		if (tabs && tabs[currentTab]){
-			return tabs[currentTab].sections === true ? 
-			(<div style={windowStyle(currentTab).root}>
-				<Tabs
-				orientation="vertical"
-				value={value}
-				onChange={handleChange}>
-				{getPanelTabs(tabs[currentTab].content, false)}
-				</Tabs>
-				{Object.keys(tabs[currentTab].content).map((section, index) => {
-
-					return (<TabPanel
-						isSubPanel={false}
-						index={index}
-						hasSections={tabs[currentTab].content[section].subsections}
-						tabData={tabs[currentTab].content[section].content}>
-					</TabPanel>);
-				})}
-			</div>) 
-			: (
-				<div style={windowStyle(currentTab).root}>
-					{getUnsectionedContent(tabs[currentTab].content)}
-					<IconButton onClick={() => props.hideTab()}
-								className={classes.exitIcon}>
-						<CloseIcon />
-					</IconButton>
-				</div>
-			);
-		}
-		else {
-			return null;
-		}
-	
+	return (<div style={windowStyle(currentTab).root}><Tabs vertical>
+		{getTabMenu(tabs, currentTab, TAB_STR)}
+		{getTabPanels(tabs, currentTab, TAB_STR)}
+	</Tabs></div>);	
 }
 
 const mapStateToProps = (state: any, props: any) => ({
