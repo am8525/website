@@ -1,4 +1,4 @@
-import { LoadConfigEventType, LoadConfigActionCreator } from '../Actions/loadConfigEvent';
+import { LoadConfigEventType } from '../Actions/loadConfigEvent';
 
 export default function loadConfigReducer(state = {}, action) {
 	switch(action.type) {

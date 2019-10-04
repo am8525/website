@@ -1,15 +1,23 @@
-import {Card, CardActions, CardContent, IconButton} from '@material-ui/core';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import { withStyles, createStyles } from '@material-ui/core/styles';
-import { TabEventType, TabEventCreator } from '../../Actions/tabEvent';
-import CloseIcon from '@material-ui/icons/Close';
+//React 
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPanelTabs } from '../../Factory/tabHelp';
-import TabPanel from './TabPanel';
-import { getUnsectionedContent } from '../../Factory/infoHelp';
+
+//UI
+import { Tabs } from 'react-web-tabs';
+import { IconButton } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+
+//Styling
+import { withStyles, createStyles } from '@material-ui/core/styles';
+
+//Actions
+import { TabEventType, TabEventCreator } from '../../Actions/tabEvent';
+
+//Factory
 import { getTabMenu, getTabPanels } from '../../Factory/TabFactory';
+import { getInfoCardContent } from '../../Factory/ContentFactory';
+
+//Constants
 import { TAB_STR } from '../../Constants';
 
 const windowStyle = (openTab) => createStyles({
@@ -45,12 +53,16 @@ const styles = () => createStyles({
 
 function InfoCard (props: any) {
 
-	const { tabs, currentTab } = props;
+	const { tabs, currentTab, classes } = props;
 
-	return (<div style={windowStyle(currentTab).root}><Tabs vertical>
-		{getTabMenu(tabs, currentTab, TAB_STR)}
-		{getTabPanels(tabs, currentTab, TAB_STR)}
-	</Tabs></div>);	
+	return (<div style={windowStyle(currentTab).root}>
+		{getInfoCardContent(tabs, currentTab, TAB_STR)}
+	<IconButton 
+		onClick={() => props.hideTab()}
+		className={classes.exitIcon}>
+		<CloseIcon />
+	</IconButton>
+	</div>);	
 }
 
 const mapStateToProps = (state: any, props: any) => ({

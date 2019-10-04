@@ -1,16 +1,22 @@
-import { Tabs, Tab, TabList, TabPanel } from 'react-web-tabs';
+//React
+import React from 'react';
+
+//UI
+import { Tab, TabList, TabPanel } from 'react-web-tabs';
+
+//Factory
 import { getPanelComponent } from './PanelFactory';
 
 export const getTabMenu = (tabs, currentTab, tabStr) => {
-	if (tabs[currentTab].sections === true) { //only return a TabList if necessary
-		return (<TabList>
+	if (tabs && tabs[currentTab] && tabs[currentTab].sections) { //only return a TabList if necessary
+		console.log(tabs[currentTab])
+		return (<div><TabList>
 			{Object.keys(tabs[currentTab].content).map((section, index) => {
-
 				return (<Tab tabFor={tabStrBuilder(section,index)}>
 					{section}
 				</Tab>);
 			})}
-		</TabList>);
+		</TabList></div>);
 	}
 	else {
 		return null;
@@ -20,15 +26,16 @@ export const getTabMenu = (tabs, currentTab, tabStr) => {
 
 
 export const getTabPanels = (tabs, currentTab, tabStr) => {
-	if (tabs[currentTab].sections === true) {
-		return Object.keys(tabs[currentTab].content).map((section, index) => {
+	if (tabs && tabs[currentTab] && tabs[currentTab].sections) {
+		return (<div> {Object.keys(tabs[currentTab].content).map((section, index) => {
 			return (<TabPanel 
 				tabId={tabStrBuilder(section,index)}
-				component={getPanelComponent(tabs[currentTab].content,section)}/>);
-		});
+				render={({selected}) => selected ? 
+					getPanelComponent(tabs[currentTab].content,section) : null} />);
+		})}</div>);
 	}
 	else {
-		return (<TabPanel component={getPanelComponent(tabs, currentTab)}/>);
+		return getPanelComponent(tabs, currentTab);
 	}
 }
 

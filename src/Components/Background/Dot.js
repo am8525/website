@@ -13,9 +13,6 @@ const styles = () => createStyles({
 
 class Dot extends React.Component {
 
-	constructor(props){
-		super(props);
-	}
 	render() {
 		const {classes} = this.props;
 		return (

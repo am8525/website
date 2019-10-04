@@ -6,33 +6,69 @@ If subsections is true, a Panel with subtabs will be returned.
 else, a plain Panel is returned.
 */
 
-import { TabList, Tab } from 'react-web-tabs';
+//React
+import React from 'react';
+
+//UI
+import { Tabs } from 'react-web-tabs';
+
+//Factory
 import { getContent } from './ContentFactory';
 import { getTabMenu, getTabPanels } from './TabFactory';
+
+//Constants
 import { SUBTAB_STR } from '../Constants';
 
-export const getPanelComponent = (tabContent, section) => {
-	if (tabContent[section].sections === true) { //return a TabbedPanel
-		return TabbedPanel(tabContent, section);
-	}
-	else { //return a PlainPanel
-		return PlainPanel(tabContent, section);
+const styling = {
+	plainPanel: {
+		marginLeft: '20px',
+		marginTop: '10px'
 	}
 }
 
-const PlainPanel = (sections, currentSection) => {
-	return (<div> 
+export const getPanelComponent = (tabContent, section) => {
+	console.log(tabContent[section])
+	if (tabContent && tabContent[section] && tabContent[section].sections) { //return a TabbedPanel
+		return <TabbedPanel sections={tabContent} currentSection={section} />
+	}
+	else { //return a PlainPanel
+		return <PlainPanel sections={tabContent} currentSection={section}/>
+	}
+}
+
+/*
+PlainPanel is a functional React Component.
+*/
+function PlainPanel(props: any) {
+
+	const { sections, currentSection } = props;
+
+	if (sections && sections[currentSection] && sections[currentSection].content){
+		return (<div style={styling.plainPanel}> 
 		{getContent(sections[currentSection].content)
 /*
 TODO: Add styling to this component!
 */
 		}
-	</div>);
+		</div>);
+	}
+	else {
+		return null;
+	}
+	
 }
 
-const TabbedPanel = (sections, currentSection) => {
-	return (<div><Tabs horizontal>
-		{getTabMenu(sections, currentSection, SUBTAB_STR)}
-		{getTabPanels(sections, currentSection, SUBTAB_STR)}
-	</Tabs></div>);
+function TabbedPanel(props: any) {
+
+	const { sections, currentSection } = props;
+
+	if (sections && sections[currentSection]) {
+		return (<div><Tabs horizontal>
+			{getTabMenu(sections, currentSection, SUBTAB_STR)}
+			{getTabPanels(sections, currentSection, SUBTAB_STR)}
+		</Tabs></div>);
+	}
+	else {
+		return null;
+	}
 }
