@@ -1,0 +1,132 @@
+{
+	"profile": {
+		"pic": {
+			"path": "images/headshot.jpg"
+		},
+		"name": {
+			"value": "Andrew McFarlane"
+		},
+		"blurb": {
+			"value": "Software Engineer based out of Langley, BC"
+		},
+
+
+		"icons": {
+			"email": {
+				"type": "email",
+				"path": "images/email_icon.png",
+				"email": "andrew.mcfarlane52@gmail.com"
+			},
+			"github": {
+				"type": "link",
+				"path": "images/github_icon.png",
+				"link": "http://github.com/am8525"
+			},
+			"linkedin": {
+				"type": "link",
+				"path": "images/linkedin_icon.png",
+				"link": "http://linkedin.com/in/andrewmcfarlane52/"
+			},
+			"resume": {
+				"type": "download",
+				"path": "images/download_icon.png",
+				"location": "McFarlane-Andrew_Resume.docx"
+			}
+		},
+		"tabs": {
+			"ABOUT": {
+				"sections": false,
+				"content": {
+					"p-0": "I am a software engineer based out of Langley, BC."
+				}
+			},
+			"RESUME": {
+				"sections": true,
+				"content":{
+					"Education": {
+						"subsections": false,
+						"content": {
+							"b-0": "Hobart College",
+							"p-0": "Graduated in 2019 with a dual BSc in Physics and Computer Science, as well as a minor in French.",
+							"p-1": "Finished with an overall 3.30 GPA.",
+							"p-2": "Notable courses include Data Structures & Algorithms, AI, Networking, Databases, and Quantum Computing."
+						}
+					},
+					"Work Experience": {
+						"subsections": true,
+						"content": {
+							"Terrafugia": {
+								"content": {
+									"b-0":"Engineering Intern",
+									"i-0":"Hybrid Systems",
+									"p-0": "Built a system analytics tool for the Transition flying car in C++."
+								}
+							},
+							"Hobart & William Smith Colleges": {
+								"content": {
+									"b-0": "Physics Teaching Fellow",
+									"i-0": "Center for Teaching and Learning (CTL)",
+									"p-0": "Assisted students in their studies while making the learning process fun."
+								
+								}	
+							}
+						}
+					},
+					"NCAA": {
+						"subsections": false,
+						"content": {
+							"b-0":"Hobart College Defensive End",
+							"p-0": "Recorded 57 tackles and 5 sacks as a Sophomore.",
+							"l-0": {
+								"p-0": "Click here for more information.",
+								"link": "https://hwsathletics.com/roster.aspx?rp_id=10823"
+							}
+						}
+					},
+					"Skills": {
+					"subsections": true,
+					"Languages/Frameworks": {
+						"content": {
+							"h-0": "Used at an enterprise level",
+							"p-0": "C++",
+							"h-1": "Proficient within a personal or academic setting",
+							"p-2": "Java",
+							"p-3": "JUnit",
+							"p-4": "Swing",
+							"p-5": "C",
+							"p-6": "Javascript",
+							"p-7": "React",
+							"p-8": "Redux",
+							"p-9": "SQL",
+							"p-10": "Bash",
+							"h-2": "Familiar with",
+							"p-11": "Python",
+							"p-12": "PHP",
+							"p-13": "Applescript"
+						}
+					},
+					"Tools": {
+						"content": {
+							"h-0": "Used at an enterprise level",
+							"p-1": "Jenkins",
+							"p-2": "SVN",
+							"p-3": "Qt",
+							"p-4": "Linux",
+							"h-1": "Proficient within a personal or academic setting",
+							"p-4": "Eclipse",
+							"p-5": "git",
+							"p-6": "Sublime Text"
+						}
+					}
+				}
+				}			
+			},
+			"PROJECTS": {
+				"sections": false,
+				"content": {
+					"p-0": "Nothing to show here."
+				}
+			}
+		}
+	}
+}
