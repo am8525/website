@@ -4,7 +4,7 @@ import SiteHeader from './Components/SiteHeader';
 import Profile from './Components/Profile';
 import AnimeBackground from './Components/AnimeBackground';
 import DataRef from './Components/DataRef';
-import InfoCard from './Components/Tabbing/InfoCard';
+import InfoCard from './Components/InfoCard';
 import { Provider } from 'react-redux';
 
 

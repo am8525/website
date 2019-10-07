@@ -5,7 +5,6 @@ A bunch of dots moving around.
 import Dot from './Dot';
 import React from 'react';
 import Anime from 'react-anime';
-import { genDots } from '../../Factory/dotHelp';
 import { dotCount } from '../../Constants';
 
 const getAnimeDotProps = dot => {
@@ -22,16 +21,7 @@ const getAnimeDotProps = dot => {
 }
 
 class DotCloud extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.dots = genDots(dotCount, {
-			minX: 10,
-			maxX: 500,
-			minY: 10,
-			maxY: 500
-		});
-	}
+	
 	render() {
 		
 		const { dots } = this.props;

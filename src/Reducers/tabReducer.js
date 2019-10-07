@@ -1,10 +1,10 @@
-import { TabEventType } from '../Actions/tabEvent';
+import { TabEventType } from '../Actions/TabEvent';
 
 const initState = {
 	openTab: 'none'
 }
 
-export default function tabReducer(state = initState, action) {
+export default function TabReducer(state = initState, action) {
 	switch (action.type) {
 		case TabEventType.showTab:
 			return {

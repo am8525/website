@@ -11,14 +11,14 @@ import CloseIcon from '@material-ui/icons/Close';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 
 //Actions
-import { TabEventType, TabEventCreator } from '../../Actions/tabEvent';
+import { TabEventType, TabEventCreator } from '../Actions/TabEvent';
 
 //Factory
-import { getTabMenu, getTabPanels } from '../../Factory/TabFactory';
-import { getInfoCardContent } from '../../Factory/ContentFactory';
+import { getTabMenu, getTabPanels } from '../Factory/TabFactory';
+import { getInfoCardContent } from '../Factory/ContentFactory';
 
 //Constants
-import { TAB_STR } from '../../Constants';
+import { TAB_STR } from '../Constants';
 
 const windowStyle = (openTab) => createStyles({
 	root: {

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import tabReducer from './tabReducer';
-import loadConfigReducer from './loadConfigReducer';
+import TabReducer from './TabReducer';
+import LoadConfigReducer from './LoadConfigReducer';
 
 export default combineReducers({
-	tab: tabReducer,
-	config: loadConfigReducer
+	tab: TabReducer,
+	config: LoadConfigReducer
 });

@@ -4,7 +4,7 @@ import {withStyles, createStyles} from '@material-ui/core/styles';
 import {connect} from 'react-redux';
 import {buttonHoverColor} from '../Constants';
 import PropTypes from 'prop-types';
-import { generateButtons } from '../Factory/buttonHelp';
+import { generateButtons } from '../Factory/ButtonFactory';
 
 const styles = () => createStyles({
 	headshot: {
