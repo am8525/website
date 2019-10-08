@@ -1,23 +1,16 @@
-//React 
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-//UI
 import { Tabs } from 'react-web-tabs';
 import { IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-
-//Styling
 import { withStyles, createStyles } from '@material-ui/core/styles';
 
-//Actions
 import { TabEventType, TabEventCreator } from '../Actions/TabEvent';
 
-//Factory
-import { getTabMenu, getTabPanels } from '../Factory/TabFactory';
 import { getInfoCardContent } from '../Factory/ContentFactory';
 
-//Constants
 import { TAB_STR } from '../Constants';
 
 const windowStyle = (openTab) => createStyles({
@@ -36,10 +29,6 @@ const windowStyle = (openTab) => createStyles({
 		clear: 'both',
 		position: 'absolute',
 		bottom: '3%'
-	},
-	exitIcon: {
-		marginTop: '10px',
-		marginRight: '10px'
 	}
 });
 
@@ -63,6 +52,12 @@ function InfoCard (props: any) {
 		<CloseIcon />
 	</IconButton>
 	</div>);	
+}
+
+InfoCard.propTypes = {
+	tabs: PropTypes.object,
+	currentTab: PropTypes.string,
+	classes: PropTypes.any
 }
 
 const mapStateToProps = (state: any, props: any) => ({

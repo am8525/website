@@ -3,6 +3,7 @@ import React from 'react';
 
 //UI
 import { Tab, TabList, TabPanel } from 'react-web-tabs';
+import 'react-web-tabs/dist/react-web-tabs.css';
 
 //Factory
 import { getPanelComponent } from './PanelFactory';

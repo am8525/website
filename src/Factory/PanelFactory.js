@@ -6,18 +6,15 @@ If subsections is true, a Panel with subtabs will be returned.
 else, a plain Panel is returned.
 */
 
-//React
 import React from 'react';
 
-//UI
 import { Tabs } from 'react-web-tabs';
 
-//Factory
 import { getContent } from './ContentFactory';
 import { getTabMenu, getTabPanels } from './TabFactory';
 
-//Constants
 import { SUBTAB_STR } from '../Constants';
+
 
 const styling = {
 	plainPanel: {
@@ -27,7 +24,7 @@ const styling = {
 }
 
 export const getPanelComponent = (tabContent, section) => {
-	console.log(tabContent[section])
+	
 	if (tabContent && tabContent[section] && tabContent[section].sections) { //return a TabbedPanel
 		return <TabbedPanel sections={tabContent} currentSection={section} />
 	}

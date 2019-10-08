@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import { LoadConfigActionCreator } from '../Actions/LoadConfigEvent';
 
 const jsonData = require('../Config/config.json');

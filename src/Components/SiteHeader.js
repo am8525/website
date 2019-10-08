@@ -1,30 +1,33 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+
 import {Button} from '@material-ui/core';
 import {withStyles, createStyles} from '@material-ui/core/styles';
-import {connect} from 'react-redux';
-import {buttonHoverColor} from '../Constants';
-import PropTypes from 'prop-types';
-import { TabEventType, TabEventCreator } from '../Actions/tabEvent';
+import { ButtonHoverColor, HeaderBackgroundColor } from '../Constants';
+
+import { TabEventType, TabEventCreator } from '../Actions/TabEvent';
 
 
 const styles = () => createStyles({
 	siteHeader: {
 		display: 'flex',
 		flexDirection: 'row',
-		alignItems: 'flex-start',
+		alignItems: 'center',
 		justifyContent: 'center',
+		background: HeaderBackgroundColor,
 		width: '100%',
-		borderBottom: '1px solid black',
+		borderBottom: '3px solid black',
 		position: 'sticky'
 	},
 	headerBtn: {
 		justifyContent: 'space-between',
-		marginLeft: '10px',
-		marginRight: '10px',
-		marginBottom: '10px',
-		marginTop: '10px',
+		margin: '7px 20px',
+		color: 'white',
+		fontSize: '15px',
+		fontWeight: 'bold',
 		'&:hover': {
-			background: buttonHoverColor,
+			background: ButtonHoverColor,
 			opacity: '.8'
 		}
 	}

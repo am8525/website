@@ -1,9 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+
 import {IconButton} from '@material-ui/core';
 import {withStyles, createStyles} from '@material-ui/core/styles';
-import {connect} from 'react-redux';
-import {buttonHoverColor} from '../Constants';
-import PropTypes from 'prop-types';
+import { ProfileBackgroundColor } from '../Constants';
+
 import { generateButtons } from '../Factory/ButtonFactory';
 
 const styles = () => createStyles({
@@ -15,7 +17,9 @@ const styles = () => createStyles({
 	},
 	profileInfo: {
 		display: 'flex',
-		flexDirection: 'column'
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 	name: {
 		marginBottom: '15px'
@@ -34,8 +38,16 @@ const styles = () => createStyles({
 });
 
 const rootStyle = {
-	display: 'inline-flex',
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+	backgroundColor: ProfileBackgroundColor,
+	borderRadius: '20px',
+	border: '3px solid black',
 	transition: 'margin-top .5s ease-out',
+	padding: '10px',
+	minWidth: '80%',
+
 	margin: '10px'
 }
 
@@ -44,7 +56,7 @@ const Profile = (props: any) => {
 		const { classes, profile, tab } = props;
 		if (profile) {
 			return (
-				<div style={{...rootStyle, 'marginTop': tab != 'none' ? '0px' : '20%'}}>
+				<div style={{...rootStyle, 'marginTop': tab != 'none' ? '5px' : '20%'}}>
 					<div>
 						<img src={profile.pic && profile.pic.path} className={classes.headshot} />
 					</div>
