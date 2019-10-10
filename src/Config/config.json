@@ -45,7 +45,8 @@
             "text": "About me...",
             "b": true,
             "i": true,
-            "size": "40px"
+            "inline": true,
+            "size": "32px"
           },
           "p-0": {
             "text": "Hello. My name is Andrew, but people typically call me AJ, besides my Nana."
@@ -54,7 +55,7 @@
             "text": "If I could summarize myself in 3 words, it would be: nerdy gym rat."
           },
           "p-2": {
-            "text": "I am a tech geek that is infatuated with information. During my last semester at Hobart College, I took some of the most difficult courses I could have possibly taken. And I absolutely loved it. BY FAR, my favorite class was Quantum Computing, which is where I picked up Information Theory (which is an absolute thrill, by the way), along with some Group Theory, a sprinkle of Number Theory, and a heaping handful of mind-bending problems and paradoxes that challenge your understanding of everything."
+            "text": "I am most passionate about becoming a better version of myself than I was yesterday, mentally and physically. Typically, I wake up around 5am, eat breakfast at 5:30 (1 cup egg whites, 1 egg, 3oz ham), and get to the gym by 6. I get back around 730am and start my day around 830am."
           },
           "p-3": {
             "text": "I am a tech geek that is infatuated with information. During my last semester at Hobart College, I took some of the most difficult courses I could have possibly taken. And I absolutely loved it. BY FAR, my favorite class was Quantum Computing, which is where I picked up Information Theory (which is an absolute thrill, by the way), along with some Group Theory, a sprinkle of Number Theory, and a heaping handful of mind-bending problems and paradoxes that challenge your understanding of everything."
@@ -71,13 +72,13 @@
                 "text": "Education",
                 "b": true,
                 "u": true,
-                "size": "32px"
+                "size": "28px"
               },
               "p-0": {
                 "text": "Hobart College",
                 "b": true,
                 "i": true,
-                "size": "24px"
+                "size": "20px"
               },
               "p-1": {
                 "text": "Graduated in 2019 with a dual BS in Physics and Computer Science, as well as a minor in French and Francophone Studies."
@@ -96,108 +97,132 @@
               "Terrafugia": {
                 "content": {
                   "p-0": {
-                    "text": "Engineering Intern, Hybrid Systems at Terrafugia (May '18 - Aug '18)",
+                    "text": "Engineering Intern, Hybrid Systems",
                     "b": true,
-                    "size": "28px"
+                    "size": "16px"
                   },
                   "p-1": {
+                    "text": "(May '18 - Aug '18)",
+                    "i": true,
+                    "size": "14px",
+                    "subheader": true,
+                    "endOfHeader": true
+                  },
+                  "p-2": {
                     "text": "Built a system analytics tool for the Transition flying car in C++."
                   }
                 }
               },
-              "Hobart & William Smith Colleges": {
+              "HWS": {
                 "content": {
                   "p-0": {
-                    "text": "Physics Teaching Fellow, Center for Teaching and Learning (CTL) at HWS (Aug '18 - May '19)",
+                    "text": "Physics Teaching Fellow,",
                     "b": true,
-                    "size": "28px"
+                    "size": "16px"
                   },
                   "p-1": {
+                    "text": "Center for Teaching and Learning (CTL)",
+                    "b": true,
+                    "size": "16px",
+                    "subheader": true
+                  },
+                  "p-2": {
+                    "text": "(Aug '18 - May '19)",
+                    "i": true,
+                    "size": "14px",
+                    "subheader": true,
+                    "endOfHeader": true
+                  },
+                  "p-3": {
                     "text": "Assisted students in their studies while making the learning process fun."
                   }
                 }
               }
-            },
-            "NCAA": {
-              "sections": false,
-              "content": {
-                "p-0": {
-                  "text": "Hobart College Defensive End",
-                  "b": true,
-                  "i": true,
-                  "size": "32px"
-                },
-                "p-1": {
-                  "text": "Recorded 57 tackles and 5 sacks as a Sophomore."
-                },
-                "p-2": {
-                  "text": "Click "
-                },
-                "l-0": {
-                  "text": "here",
-                  "link": "https://hwsathletics.com/roster.aspx?rp_id=10823"
-                },
-                "p-3": {
-                  "text": " for more information.",
-                  "inline": true
+            }
+          },
+          "NCAA": {
+            "sections": false,
+            "content": {
+              "t-0": {
+                "text": "Hobart College Defensive End",
+                "b": true,
+                "i": true,
+                "size": "20px",
+                "endOfHeader": true
+              },
+              "p-1": {
+                "text": "Recorded 57 tackles and 5 sacks as a Sophomore."
+              },
+              "c-0": {
+                "items": {
+                  "p-2": {
+                    "text": "Click "
+                  },
+                  "l-0": {
+                    "text": "here",
+                    "link": "https://hwsathletics.com/roster.aspx?rp_id=10823"
+                  },
+                  "p-3": {
+                    "text": " for more information."
+                  }
                 }
               }
-            },
-            "Skills": {
-              "sections": true,
-              "content": {
-                "Languages/Frameworks": {
-                  "content": {
-                    "h-0": {
-                      "head": "Used at an enterprise level:",
-                      "items": {
-                        "li-0": "C++"
-                      }
-                    },
-                    "h-1": {
-                      "head": "Proficient within a personal or academic setting:",
-                      "items": {
-                        "li-0": "Bash",
-                        "li-1": "C",
-                        "li-2": "Java",
-                        "li-3": "JavaScript",
-                        "li-4": "JUnit",
-                        "li-5": "PHP",
-                        "li-6": "ReactJS",
-                        "li-7": "Redux",
-                        "li-8": "SQL"
-                      }
-                    },
-                    "h-2": {
-                      "head": "Basic familiarity with:",
-                      "items": {
-                        "li-0": "Applescript",
-                        "li-1": "Perl"
-                      }
+            }
+          },
+          "Skills": {
+            "sections": true,
+            "content": {
+              "Languages/Frameworks": {
+                "content": {
+                  "h-0": {
+                    "head": "Used at an enterprise level:",
+                    "items": {
+                      "li-0": "C++"
+                    }
+                  },
+                  "h-1": {
+                    "head": "Proficient within a personal or academic setting:",
+                    "items": {
+                      "li-0": "Bash",
+                      "li-1": "C",
+                      "li-2": "Java",
+                      "li-3": "JavaScript",
+                      "li-4": "JUnit",
+                      "li-5": "PHP",
+                      "li-6": "ReactJS",
+                      "li-7": "Redux",
+                      "li-8": "SQL"
+                    }
+                  },
+                  "h-2": {
+                    "head": "Basic familiarity with:",
+                    "items": {
+                      "li-0": "Applescript",
+                      "li-1": "Perl"
                     }
                   }
-                },
-                "Tools": {
-                  "content": {
-                    "h-0": {
-                      "head": "Used at an enterprise level:",
-                      "items": {
-                        "li-0": "Jenkins",
-                        "li-1": "Linux",
-                        "li-2": "Qt",
-                        "li-3": "SVN"
-                      }
-                    },
-                    "h-1": {
-                      "head": "Proficient within a personal or academic setting",
-                      "items": {
-                        "li-0": "Eclipse",
-                        "li-1": "git",
-                        "li-2": "JSON",
-                        "li-3": "Sublime Text",
-                        "li-4": "Swing",
-                        "li-5": "VS Code"
-                      }
+                }
+              },
+              "Tools": {
+                "content": {
+                  "h-0": {
+                    "head": "Used at an enterprise level:",
+                    "items": {
+                      "li-0": "Jenkins",
+                      "li-1": "Linux",
+                      "li-2": "Qt",
+                      "li-3": "SVN"
+                    }
+                  },
+                  "h-1": {
+                    "head": "Proficient within a personal or academic setting:",
+                    "items": {
+                      "li-0": "Eclipse",
+                      "li-1": "git",
+                      "li-2": "JSON",
+                      "li-3": "Sublime Text",
+                      "li-4": "Swing",
+                      "li-5": "VS Code"
                     }
                   }
                 }
@@ -215,21 +240,21 @@
               "t-0": {
                 "text": "Personal Site",
                 "i": true,
-                "size": "40px"
+                "size": "28px"
               },
               "p-0": {
-                "text": "With next to zero prior web experience, built this website using ReactJS and Redux in a month."
+                "text": "With almost zero prior web experience, built this website using ReactJS and Redux in a month."
               },
-              "p-1": {
-                "text": "Check out the source code "
-              },
-              "l-0": {
-                "text": "here",
-                "link": "https://github.com/am8525/website"
-              },
-              "p-2": {
-                "text": ".",
-                "inline": true
+              "c-0": {
+                "items": {
+                  "p-1": {
+                    "text": "Check out the source code "
+                  },
+                  "l-0": {
+                    "text": "here.",
+                    "link": "https://github.com/am8525/website"
+                  }
+                }
               }
             }
           }

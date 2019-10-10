@@ -34,9 +34,9 @@ const windowStyle = openTab =>
 const styles = () =>
   createStyles({
     exitIcon: {
-      position: "absolute",
-      top: "3%",
-      right: "3%"
+      position: "relative",
+      top: "10%",
+      right: "2%"
     }
   });
 

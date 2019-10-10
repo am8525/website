@@ -2,9 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { IconButton } from "@material-ui/core";
 import { withStyles, createStyles } from "@material-ui/core/styles";
-import { ProfileBackgroundColor, SmallIconColor } from "../Constants";
+import { ProfileBackgroundColor } from "../Constants";
 
 import { generateButtons } from "../Factory/ButtonFactory";
 
@@ -96,7 +95,7 @@ Profile.propTypes = {
   tab: PropTypes.any
 };
 
-const mapStateToProps = (state: any, props: {}) => ({
+const mapStateToProps = (state, props) => ({
   profile: state && state.config && state.config.profile,
   tab: state && state.tab && state.tab.openTab
 });
