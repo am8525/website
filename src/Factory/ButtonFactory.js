@@ -1,9 +1,6 @@
 import React from "react";
 
-import { createStyles } from "@material-ui/styles";
 import { IconButton } from "@material-ui/core";
-
-import { SmallIconColor } from "../Constants";
 
 const visitPage = url => {
   window.location = url;
