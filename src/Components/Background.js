@@ -1,3 +1,11 @@
+/**
+ * NOTE!
+ *
+ * As of release v0.1.2, this component is not being used.
+ *
+ * We will keep it around to incorporate an animated background at a later time.
+ */
+
 import React from "react";
 import { createStyles, withStyles } from "@material-ui/core/styles";
 
@@ -32,8 +40,6 @@ class Background extends React.Component {
       );
     }
   }
-
-  componentDidMount() {}
 
   componentWillUnmount() {
     if (this.effect) this.effect.destroy();

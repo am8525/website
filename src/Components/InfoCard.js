@@ -20,7 +20,7 @@ const windowStyle = openTab =>
       flexDirection: "row",
       border: "1px solid black",
       minHeight: "500px",
-      marginTop: "2%",
+      marginTop: "4%",
       marginBottom: "-2%",
       borderRadius: "40px",
       alignItems: "flex-start",

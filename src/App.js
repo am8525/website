@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Background from "./Components/Background";
 import SiteHeader from "./Components/SiteHeader";
 import Profile from "./Components/Profile";
 import DataRef from "./Components/DataRef";
@@ -18,7 +17,6 @@ function App() {
           <SiteHeader />
           <Profile />
           <InfoCard />
-          <Background></Background>
         </div>
       </Provider>
     </div>

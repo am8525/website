@@ -5,6 +5,14 @@
   height: 100%;
   align-items: center;
   position: relative;
+  background: url("assets/nature.jpeg") blue;
+}
+
+html,
+body,
+#root,
+.topLevel {
+  height: 100%;
 }
 
 .App-logo {
