@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 //enabling the StackDriver Debugger
-require("@google-cloud/debug-agent").start();
+//require("@google-cloud/debug-agent").start();
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
