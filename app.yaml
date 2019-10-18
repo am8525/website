@@ -1,5 +1,5 @@
 runtime: nodejs10
 
 basic_scaling:
-  instances: 1
+  max_instances: 2
   idle_timeout: 10m
