@@ -1,4 +1,4 @@
 cron:
 - description: "keep alive"
   url: /
-  schedule: every 570 seconds
+  schedule: every 9 minutes
