@@ -16,7 +16,7 @@ const styles = () =>
       alignItems: "center",
       justifyContent: "center",
       background: HeaderBackgroundColor,
-      width: "100%",
+      minWidth: "100%",
       borderBottom: "3px solid black",
       position: "fixed"
     },

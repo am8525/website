@@ -14,6 +14,7 @@ function App() {
       <Provider store={store}>
         <DataRef />
         <div className="App">
+          <div className="background"></div>
           <SiteHeader />
           <Profile />
           <InfoCard />
