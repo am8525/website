@@ -1,11 +1,3 @@
-/*
-Factory class responsible for generating Panels,
-based on provided input.
-
-If subsections is true, a Panel with subtabs will be returned.
-else, a plain Panel is returned.
-*/
-
 import React from "react";
 
 import { Tabs } from "react-web-tabs";
@@ -15,7 +7,6 @@ import { getTabMenu, getTabPanels } from "./TabFactory";
 
 import { SUBTAB_STR } from "../Constants";
 import { createStyles } from "@material-ui/core";
-import { StylesContext } from "@material-ui/styles/StylesProvider";
 
 const styling = createStyles({
   plainPanel: {
@@ -38,9 +29,6 @@ export const getPanelComponent = (tabContent, section) => {
   }
 };
 
-/*
-PlainPanel is a functional React Component.
-*/
 function PlainPanel(props) {
   const { sections, currentSection } = props;
 

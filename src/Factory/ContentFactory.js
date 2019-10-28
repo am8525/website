@@ -9,14 +9,13 @@ import { getTabMenu, getTabPanels } from "./TabFactory";
 import { Tabs } from "react-web-tabs";
 
 import { createStyles } from "@material-ui/styles";
-import { positions } from "@material-ui/system";
 
 const delims = {
   title: "t",
   plain: "p",
   list: "h",
   link: "l",
-  compound: "c" //contains several chunks, meant to be inserted into same div as a row.
+  compound: "c"
 };
 
 const styles = createStyles({

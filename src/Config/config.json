@@ -1,7 +1,7 @@
 {
   "profile": {
     "pic": {
-      "path": "images/headshot.jpg",
+      "path": "images/headshot__.jpg",
       "alt": "Headshot"
     },
     "name": {
@@ -246,7 +246,7 @@
                 "size": "28px"
               },
               "p-0": {
-                "text": "With almost zero prior web experience, built this website using ReactJS and Redux in a month."
+                "text": "With next to zero prior web experience, built this website using ReactJS and Redux in a month."
               },
               "c-0": {
                 "items": {

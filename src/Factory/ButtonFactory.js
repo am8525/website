@@ -19,7 +19,7 @@ const download = url => {
   document.body.removeChild(link);
 };
 
-export const generateButtons = (styles: any, buttonData: any) => {
+export const generateButtons = (styles, buttonData) => {
   return Object.keys(buttonData).map(button => {
     const clickEvt = btnObj => {
       switch (btnObj.type) {

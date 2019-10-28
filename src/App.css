@@ -11,8 +11,8 @@
 .background {
   min-height: 100%;
   min-width: 100%;
+  background: url("assets/nature__.jpg") blue;
   position: fixed;
-  background: url("assets/nature.jpeg") blue;
   z-index: -1;
 }
 

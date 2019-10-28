@@ -41,11 +41,10 @@ const styles = () =>
   });
 
 function InfoCard(props) {
-  const rootEl = React.useRef(null);
-  const { tabs, currentTab, classes } = props;
+  const { classes, tabs, currentTab } = props;
 
   return (
-    <div ref={rootEl} style={windowStyle(currentTab).root}>
+    <div style={windowStyle(currentTab).root}>
       {getInfoCardContent(tabs, currentTab, TAB_STR)}
       <IconButton onClick={() => props.hideTab()} className={classes.exitIcon}>
         <CloseIcon />
