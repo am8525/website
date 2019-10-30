@@ -2,7 +2,22 @@ runtime: nodejs10
 
 instance_class: F2
 
+resources:
+  cpu: 4
+  memory_gb: 8
+  disk_size_gb: 20
+  
+
 automatic_scaling:
-  min_instances: 1
-  max_instances: 2
-  max_idle_instances: 1
+  min_num_instances: 1
+  max_num_instances: 5
+  cpu_utilization:
+    target_utilization: 0.6 
+
+liveness_check:
+  path: "/public"
+  timeout_sec: 4
+  check_interval_sec: 30
+  failure_threshold: 3
+  success_threshold: 2
+  initial_delay_sec: 200
