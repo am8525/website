@@ -3,12 +3,12 @@ runtime: nodejs10
 instance_class: F2
 
 handlers:
-  - url: /static/js/(.*)
-    static_files: build/static/js/(.*)
-    upload: build/static/js/(.*)
   - url: /static/css/(.*)
     static_files: build/static/css/(.*)
     upload: build/static/css/(.*)
+  - url: /static/js/(.*)
+    static_files: build/static/js/(.*)
+    upload: build/static/js/(.*)
   - url: /static/media/(.*)
     static_files: build/static/media/(.*)
     upload: build/static/media/(.*)
@@ -29,9 +29,9 @@ resources:
 
 automatic_scaling:
   min_instances: 1
-  max_instances: 6
+  max_instances: 2
   min_idle_instances: 1
-  max_idle_instances: 5
+  max_idle_instances: 2
 
 liveness_check:
   path: "/build"

@@ -1,6 +1,6 @@
-steps: 
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
+steps:
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy"]
 options:
-  diskSizeGb: 5
+  diskSizeGb: 10
 timeout: "1600s"
