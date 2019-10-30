@@ -2,20 +2,39 @@ runtime: nodejs10
 
 instance_class: F2
 
+handlers:
+  - url: /static/js/(.*)
+    static_files: build/static/js/\2
+    upload: build/static/js/(.*)
+  - url: /static/css/(.*)
+    static_files: build/static/css/\2
+    upload: build/static/css/(.*)
+  - url: /static/media/(.*)
+    static_files: build/static/media/(.*)
+    upload: build/static/media/(.*)
+  - url: /(.*\.(json|ico|png|js))$
+    static_files: build/(.*)
+    upload: build/.*\.(json|ico|png|js)$
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+
 resources:
   cpu: 4
   memory_gb: 8
   disk_size_gb: 20
-  
 
 automatic_scaling:
   min_instances: 1
   max_instances: 6
   min_idle_instances: 1
-  max_idle_instances: 5  
+  max_idle_instances: 5
 
 liveness_check:
-  path: "/public"
+  path: "/build"
   timeout_sec: 4
   check_interval_sec: 30
   failure_threshold: 3
