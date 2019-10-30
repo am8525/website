@@ -18,11 +18,9 @@ handlers:
   - url: /
     static_files: /build/index.html
     upload: /build/index.html
-    script: auto
   - url: /.*
     static_files: /build/index.html
     upload: /build/index.html
-    script: auto
 
 resources:
   cpu: 4
