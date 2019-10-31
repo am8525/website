@@ -17,27 +17,46 @@ const styles = () =>
     },
     profileInfo: {
       display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
+      flexDirection: window.innerWidth >= 700 ? "column" : "row",
+      minWidth: "0px",
+      minHeight: "0px",
+      height: "auto",
+      justifyContent: "space-between",
       alignItems: "center"
     },
+    nameAndBlurb: {
+      display: "flex",
+      flexDirection: "column"
+    },
     name: {
-      marginTop: "-30px"
+      display: "inline",
+      overflowWrap: "normal",
+      minHeight: "0px",
+      height: "auto"
     },
     blurb: {
-      marginTop: "-20px"
+      position: "relative",
+      bottom: window.innerWidth >= 700 ? "0px" : "70px",
+      right: "15px",
+      display: "inline",
+      overflowWrap: "normal"
     },
     nameTxt: {
       fontFamily: "Georgia, serif",
-      fontSize: "40px"
+      fontSize: "40px",
+      display: "inline",
+      position: "relative"
     },
     quickLinks: {
       display: "flex",
-      marginTop: "50px"
+      marginTop: window.innerWidth >= 700 ? "25%" : "0px",
+      minWidth: "0px"
     },
     smallIcon: {
       width: "45px",
       height: "45px",
+      display: "inline-block",
+      position: "relative",
       backgroundColor: "transparent",
       marginLeft: "10px",
       marginRight: "10px"
@@ -46,21 +65,24 @@ const styles = () =>
 
 const rootStyle = {
   display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  flexDirection: window.innerWidth >= 700 ? "row" : "column",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
   backgroundColor: ProfileBackgroundColor,
   borderRadius: "20px",
   border: "3px solid black",
   transition: "margin-top .5s ease-out",
   padding: "10px",
-  maxWidth: "650px",
+  minWidth: "0px",
+  maxWidth: window.innerWidth < 700 ? "95vw" : "650px",
   margin: "0 auto"
 };
 
 const Profile = props => {
   const { classes, profile, tab } = props;
   if (profile) {
-    return (
+    //larger view (desktop, ipad)
+    return window.innerWidth >= 700 ? (
       <div style={{ ...rootStyle, marginTop: tab !== "none" ? "5px" : "20%" }}>
         <div>
           <img
@@ -70,17 +92,43 @@ const Profile = props => {
           />
         </div>
         <div className={classes.profileInfo}>
-          <div className={classes.name}>
-            <h2 className={classes.nameTxt}>
-              {profile.name && profile.name.value}
-            </h2>
-          </div>
-          <div className={classes.blurb}>
-            <i>{profile.blurb && profile.blurb.value}</i>
+          <div className={classes.nameAndBlurb}>
+            <div className={classes.name}>
+              <h2 className={classes.nameTxt}>
+                {profile.name && profile.name.value}
+              </h2>
+            </div>
+            <div className={classes.blurb}>
+              <i>{profile.blurb && profile.blurb.value}</i>
+            </div>
           </div>
           <div className={classes.quickLinks}>
             {generateButtons(classes, profile.icons)}
           </div>
+        </div>
+      </div>
+    ) : (
+      //column view (mobile)
+      <div style={{ ...rootStyle, marginTop: tab !== "none" ? "50px" : "20%" }}>
+        <div className={classes.name}>
+          <h2 className={classes.nameTxt}>
+            {profile.name && profile.name.value}
+          </h2>
+        </div>
+        <div className={classes.profileInfo}>
+          <div>
+            <img
+              alt={profile.pic && profile.pic.alt}
+              src={profile.pic && profile.pic.path}
+              className={classes.headshot}
+            />
+          </div>
+          <div className={classes.blurb}>
+            <i>{profile.blurb && profile.blurb.value}</i>
+          </div>
+        </div>
+        <div className={classes.quickLinks}>
+          {generateButtons(classes, profile.icons)}
         </div>
       </div>
     );
