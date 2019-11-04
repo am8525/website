@@ -10,10 +10,23 @@ const styles = createStyles({
   vertTabTxt: {
     fontWeight: "bold",
     display: "inline",
-    padding: "-20px"
+    padding: "-20px",
+    overflowWrap: "normal"
   },
   panelStack: {
     marginLeft: "-15px"
+  },
+  listTab: {
+    display: "inline-block",
+    textAlign: "left",
+    width: "auto",
+    overflowWrap: "normal"
+  },
+  tabList: {
+    position: "relative"
+  },
+  tabContainer: {
+    maxWidth: "42%"
   }
 });
 
@@ -22,11 +35,11 @@ export const getTabMenu = (tabs, currentTab, tabStr) => {
     //only return a TabList if necessary
 
     return (
-      <div style={styles.tabList}>
-        <TabList>
+      <div style={styles.tabContainer}>
+        <TabList style={styles.tabList}>
           {Object.keys(tabs[currentTab].content).map((section, index) => {
             return (
-              <Tab tabFor={tabStrBuilder(tabStr, index)}>
+              <Tab style={styles.listTab} tabFor={tabStrBuilder(tabStr, index)}>
                 <p style={styles.vertTabTxt}>{section}</p>
               </Tab>
             );

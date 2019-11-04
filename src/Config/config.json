@@ -49,19 +49,25 @@
             "size": "32px"
           },
           "p-0": {
-            "text": "Hello. My name is Andrew, but people typically call me AJ, besides my Nana."
+            "text": "A soldier in the shadows, a silver fin in the river; I need no introduction and wouldn’t want one either."
           },
           "p-1": {
-            "text": "If I could summarize myself in 3 words, it would be: nerdy gym rat."
+            "text": "Above all I am a builder, stacking thoughts far and wide. Making sense of what we have before I turn and wither."
           },
           "p-2": {
-            "text": "I am most passionate about becoming a better version of myself than I was yesterday, mentally and physically. Typically, I wake up around 5am, eat breakfast at 5:30 (1 cup egg whites, 1 egg, 3oz ham), and get to the gym by 6. I get back around 730am and start my day around 830am."
+            "text": "Being great is no small feat. It is rather difficult and tough. Rejection and defeat flow over brim, staining wood ‘neath my cup. Truth is we must fail to succeed. Fuel work with passion, fail fast, and the sky is your sea."
           },
           "p-3": {
-            "text": "I am a tech geek that is infatuated with information. During my last semester at Hobart College, I took some of the most difficult courses I could have possibly taken. And I absolutely loved it. BY FAR, my favorite class was Quantum Computing, which is where I picked up Information Theory (which is an absolute thrill, by the way), along with some Group Theory, a sprinkle of Number Theory, and a heaping handful of mind-bending problems and paradoxes that challenge your understanding of everything."
+            "text": "Control what you can and take each day as it comes. Be present each day, note all here from. I never partied as much as I’d have liked, this much is true; For long it was sacrifice, now it is imbued."
           },
           "p-4": {
-            "text": "When I am not at the gym or programming, I am likely doing one of three things: reading a book or technical article, eating, or thinking about my next meal. Learning and eating make up a big part of my life."
+            "text": "No rest for the wary in this world of ours. Time waits for none, so help yourself and make haste with yours. Seduced by submersion, waves lapping at the brow; Imagine what’s possible with grit and a little know-how."
+          },
+          "p-5": {
+            "text": "Truth is, we are all great in many way, shape, or form; some don’t know it yet, some prefer the norm. Artist, author, teacher, engineer, each talented many a way, enriching the world with gifts borne."
+          },
+          "p-6": {
+            "text": "Partying and clubbing was never that cool, it was just something to do. Besides, why club when you can code and drink beer too?"
           }
         }
       },
@@ -87,10 +93,7 @@
                 "text": "Graduated in 2019 with a dual BS in Physics and Computer Science, as well as a minor in French and Francophone Studies."
               },
               "p-2": {
-                "text": "Finished with an overall 3.30 GPA."
-              },
-              "p-3": {
-                "text": "Notable courses include Data Structures & Algorithms, AI, Networking, Databases, and Quantum Computing."
+                "text": "Notable coursework includes Data Structures & Algorithms, AI, Networking, Databases, and Quantum Computing."
               }
             }
           },
@@ -175,7 +178,7 @@
           "Skills": {
             "sections": true,
             "content": {
-              "Languages/Frameworks": {
+              "Languages/\nFrameworks": {
                 "content": {
                   "h-0": {
                     "head": "Used at an enterprise level:",

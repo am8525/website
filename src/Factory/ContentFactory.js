@@ -19,7 +19,9 @@ const delims = {
 };
 
 const styles = createStyles({
-  plainTxt: {},
+  plainTxt: {
+    overflowWrap: "normal"
+  },
   titleTxt: {
     fontFamily: "Courier New, Courier, monospace"
   },
@@ -80,11 +82,7 @@ export const getInfoCardContent = (tabs, currentTab, tabStr) => {
     /*
 	Typically used to return a single PlainPanel.
 	*/
-    return (
-      <div style={{ ...styles.plainPanel }}>
-        {getTabPanels(tabs, currentTab, tabStr)}
-      </div>
-    );
+    return getTabPanels(tabs, currentTab, tabStr);
   } else {
     return null;
   }
@@ -107,6 +105,7 @@ const getTextStyling = (content, chunk) => {
 
 const getTextBoxStyling = (content, chunk) => {
   const style = {
+    overflowWrap: "normal",
     marginTop: content[chunk].subheader ? "-10px" : "0px",
     paddingBottom: content[chunk].endOfHeader ? "20px" : "0px"
   };
@@ -121,36 +120,32 @@ const getTextBoxStyling = (content, chunk) => {
  * returning the content in an appropriate fashion.
  */
 export const getContent = content => {
-  return (
-    <div style={styles.contentBox}>
-      {Object.keys(content).map(chunk => {
-        switch (chunk.split("-")[0]) {
-          //returns some plain text.
-          case delims.plain:
-            return getPlainText(content, chunk);
+  return Object.keys(content).map(chunk => {
+    switch (chunk.split("-")[0]) {
+      //returns some plain text.
+      case delims.plain:
+        return getPlainText(content, chunk);
 
-          //returns a link attached to text.
-          case delims.link:
-            return getLinkText(content, chunk);
+      //returns a link attached to text.
+      case delims.link:
+        return getLinkText(content, chunk);
 
-          //returns an unordered list of elements.
-          case delims.list:
-            return getListText(content, chunk);
+      //returns an unordered list of elements.
+      case delims.list:
+        return getListText(content, chunk);
 
-          //returns some title text.
-          case delims.title:
-            return getTitleText(content, chunk);
+      //returns some title text.
+      case delims.title:
+        return getTitleText(content, chunk);
 
-          //returns some compounded text elements.
-          case delims.compound:
-            return getCompoundText(content, chunk);
+      //returns some compounded text elements.
+      case delims.compound:
+        return getCompoundText(content, chunk);
 
-          default:
-            return null;
-        }
-      })}
-    </div>
-  );
+      default:
+        return null;
+    }
+  });
 };
 
 const getPlainText = (content, chunk) => {

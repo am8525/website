@@ -17,6 +17,7 @@ const windowStyle = openTab =>
     root: {
       display: openTab === "none" ? "none" : "flex",
       backgroundColor: ProfileBackgroundColor,
+      zIndex: "1",
       flexDirection: "row",
       border: "1px solid black",
       minHeight: "500px",
@@ -24,8 +25,10 @@ const windowStyle = openTab =>
       marginBottom: "-2%",
       borderRadius: "40px",
       alignItems: "flex-start",
-      justifyContent: "space-between",
-      width: "75%",
+      justifyContent: "flex-start",
+      minWidth: "0px",
+      width: "auto",
+      maxWidth: "95vw",
       position: "relative",
       bottom: "3%"
     }
@@ -34,9 +37,8 @@ const windowStyle = openTab =>
 const styles = () =>
   createStyles({
     exitIcon: {
-      position: "relative",
-      top: "10%",
-      right: "2%"
+      zIndex: "-1",
+      position: "relative"
     }
   });
 

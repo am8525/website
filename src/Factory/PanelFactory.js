@@ -12,7 +12,12 @@ const styling = createStyles({
   plainPanel: {
     display: "flex",
     flexDirection: "column",
-    textAlign: "left"
+    marginLeft: "15px",
+    paddingRight: "-10vw",
+    overflowWrap: "normal",
+    maxWidth: "90%",
+    textAlign: "left",
+    overflow: "scroll"
   },
   tabbedPanelStack: {
     marginLeft: "15px"
@@ -52,8 +57,8 @@ function TabbedPanel(props) {
 
   if (sections && sections[currentSection]) {
     return (
-      <div>
-        <Tabs horizontal>
+      <div style={styling.tabbedPanels}>
+        <Tabs vertical="false">
           {getTabMenu(sections, currentSection, SUBTAB_STR)}
           <div style={styling.tabbedPanelStack}>
             {getTabPanels(sections, currentSection, SUBTAB_STR)}

@@ -12,6 +12,7 @@ const styles = () =>
   createStyles({
     siteHeader: {
       display: "flex",
+      zIndex: "3",
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",

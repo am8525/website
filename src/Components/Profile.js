@@ -65,6 +65,7 @@ const styles = () =>
 
 const rootStyle = {
   display: "flex",
+  zIndex: "1",
   flexDirection: window.innerWidth >= 700 ? "row" : "column",
   justifyContent: "flex-start",
   alignItems: "flex-start",
@@ -83,7 +84,7 @@ const Profile = props => {
   if (profile) {
     //larger view (desktop, ipad)
     return window.innerWidth >= 700 ? (
-      <div style={{ ...rootStyle, marginTop: tab !== "none" ? "5px" : "20%" }}>
+      <div style={{ ...rootStyle, marginTop: tab !== "none" ? "-5%" : "20%" }}>
         <div>
           <img
             alt={profile.pic && profile.pic.alt}
@@ -109,7 +110,7 @@ const Profile = props => {
       </div>
     ) : (
       //column view (mobile)
-      <div style={{ ...rootStyle, marginTop: tab !== "none" ? "50px" : "20%" }}>
+      <div style={{ ...rootStyle, marginTop: tab !== "none" ? "-5%" : "20%" }}>
         <div className={classes.name}>
           <h2 className={classes.nameTxt}>
             {profile.name && profile.name.value}
