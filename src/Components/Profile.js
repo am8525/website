@@ -12,9 +12,9 @@ import { generateButtons } from "../Factory/ButtonFactory";
 const styles = () =>
   createStyles({
     headshot: {
-      borderRadius: "50%",
       height: "220px",
-      width: "210px",
+      width: "220px",
+      borderRadius: "50%",
       border: "3px solid black"
     },
     profileInfo: {
