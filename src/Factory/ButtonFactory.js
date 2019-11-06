@@ -1,6 +1,10 @@
 import React from "react";
-
 import { IconButton } from "@material-ui/core";
+
+/**
+ * Factory class responsible for generating buttons
+ * and associated actions.
+ */
 
 const visitPage = url => {
   window.location = url;

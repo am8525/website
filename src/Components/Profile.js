@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
 import { withStyles, createStyles } from "@material-ui/core/styles";
 import { ProfileBackgroundColor } from "../Constants";
-
 import { generateButtons } from "../Factory/ButtonFactory";
+
+/**
+ * The main centerpiece of the app.
+ */
 
 const styles = () =>
   createStyles({

@@ -1,10 +1,13 @@
 import React from "react";
-
 import { Tab, TabList, TabPanel } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
 import { createStyles } from "@material-ui/styles";
-
 import { getPanelComponent } from "./PanelFactory";
+
+/**
+ * Factory responsible for generating top-level tab menus.
+ * Subtabs are handled in PanelFactory to avoid { Tab } import conflicts between rwt and material-ui.
+ */
 
 const styles = createStyles({
   vertTabTxt: {
@@ -75,6 +78,6 @@ export const getTabPanels = (tabs, currentTab, tabStr) => {
   }
 };
 
-const tabStrBuilder = (str, index) => {
+export const tabStrBuilder = (str, index) => {
   return str.concat("-", index.toString(10));
 };

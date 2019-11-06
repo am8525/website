@@ -1,14 +1,12 @@
+import React from "react";
+import { getTabMenu, getTabPanels } from "./TabFactory";
+import { Tabs } from "react-web-tabs";
+import { createStyles } from "@material-ui/styles";
+
 /*
 Factory responsible for computing and returning actual
 raw content that will appear on panels.
 */
-
-import React from "react";
-
-import { getTabMenu, getTabPanels } from "./TabFactory";
-import { Tabs } from "react-web-tabs";
-
-import { createStyles } from "@material-ui/styles";
 
 const delims = {
   title: "t",
@@ -21,6 +19,10 @@ const delims = {
 const styles = createStyles({
   plainTxt: {
     overflowWrap: "normal"
+  },
+  linkTxt: {
+    overflowWrap: "normal",
+    display: "inline"
   },
   titleTxt: {
     fontFamily: "Courier New, Courier, monospace"
@@ -43,25 +45,10 @@ const styles = createStyles({
     marginTop: "2%",
     marginLeft: "2%"
   },
-  linkBox: {
-    display: "flex",
-    textAlign: "center",
-    paddingRight: "5px",
-    paddingLeft: "5px"
-  },
-  linkTxt: {
-    position: "relative",
-    top: "33%"
-  },
   plainPanel: {
     display: "flex",
     flexDirection: "column",
     textAlign: "left"
-  },
-  compoundBox: {
-    display: "flex",
-    flexDirection: "row",
-    marginTop: "-15px"
   }
 });
 
@@ -89,7 +76,7 @@ export const getInfoCardContent = (tabs, currentTab, tabStr) => {
 };
 
 /**
- * Retrieves styling info from the config file.
+ * Retrieves text styling info from the config file.
  */
 const getTextStyling = (content, chunk) => {
   const style = {
@@ -103,6 +90,9 @@ const getTextStyling = (content, chunk) => {
   return style;
 };
 
+/**
+ * generates text box styling for plain text containment.
+ */
 const getTextBoxStyling = (content, chunk) => {
   const style = {
     overflowWrap: "normal",
@@ -122,25 +112,20 @@ const getTextBoxStyling = (content, chunk) => {
 export const getContent = content => {
   return Object.keys(content).map(chunk => {
     switch (chunk.split("-")[0]) {
-      //returns some plain text.
       case delims.plain:
         return getPlainText(content, chunk);
 
-      //returns a link attached to text.
       case delims.link:
         return getLinkText(content, chunk);
 
-      //returns an unordered list of elements.
       case delims.list:
         return getListText(content, chunk);
 
-      //returns some title text.
       case delims.title:
         return getTitleText(content, chunk);
 
-      //returns some compounded text elements.
       case delims.compound:
-        return getCompoundText(content, chunk);
+        return getCompoundElement(content, chunk);
 
       default:
         return null;
@@ -148,6 +133,9 @@ export const getContent = content => {
   });
 };
 
+/**
+ * generates plain text.
+ */
 const getPlainText = (content, chunk) => {
   return (
     <div style={{ ...getTextBoxStyling(content, chunk) }}>
@@ -163,21 +151,20 @@ const getPlainText = (content, chunk) => {
   );
 };
 
+/**
+ * generates link text.
+ */
 const getLinkText = (content, chunk) => {
   return (
-    <div
-      style={{
-        ...styles.linkBox,
-        ...getTextBoxStyling(content, chunk)
-      }}
-    >
-      <a style={styles.linkTxt} href={content[chunk].link}>
-        {content[chunk].text}
-      </a>
-    </div>
+    <a style={styles.linkTxt} href={content[chunk].link}>
+      {content[chunk].text}
+    </a>
   );
 };
 
+/**
+ * generates list text.
+ */
 const getListText = (content, chunk) => {
   return (
     <div style={styles.listBox}>
@@ -193,6 +180,9 @@ const getListText = (content, chunk) => {
   );
 };
 
+/**
+ * generates title text.
+ */
 const getTitleText = (content, chunk) => {
   return (
     <div style={{ ...styles.titleBox }}>
@@ -208,22 +198,22 @@ const getTitleText = (content, chunk) => {
   );
 };
 
-const getCompoundText = (content, chunk) => {
+/**
+ * generates a <p> tag with an anchor within.
+ */
+const getCompoundElement = (content, chunk) => {
   return (
-    <div style={styles.compoundBox}>
+    <p style={{ display: "inline" }}>
       {Object.keys(content[chunk].items).map(el => {
-        switch (el.split("-")[0]) {
-          //returns plain text
-          case delims.plain:
-            return getPlainText(content[chunk].items, el);
-
-          //returns link text
-          case delims.link:
-            return getLinkText(content[chunk].items, el);
-          default:
-            return null;
+        //link text (return anchor)
+        if (el.split("-")[0] === delims.link) {
+          return getLinkText(content[chunk].items, el);
+        }
+        //plain text (return text)
+        else {
+          return content[chunk].items[el].text;
         }
       })}
-    </div>
+    </p>
   );
 };

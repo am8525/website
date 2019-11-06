@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-
 import { IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import { withStyles, createStyles } from "@material-ui/core/styles";
-
 import { TabEventCreator } from "../Actions/TabEvent";
-
 import { getInfoCardContent } from "../Factory/ContentFactory";
-
 import { TAB_STR, ProfileBackgroundColor } from "../Constants";
+
+/**
+ * The card that pops up when a tab from the top bar is selected.
+ */
 
 const windowStyle = openTab =>
   createStyles({
