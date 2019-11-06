@@ -13,8 +13,8 @@ const styles = () =>
   createStyles({
     headshot: {
       borderRadius: "50%",
-      height: "240px",
-      width: "200px",
+      height: "220px",
+      width: "210px",
       border: "3px solid black"
     },
     profileInfo: {
